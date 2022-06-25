@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+section{
+    display: flex;
+    width: 100vw;
+    position: fixed;
+    justify-content: space-evenly;
+    bottom: 0;
+    height: 10pc;
+    background-color: antiquewhite;
+}
+
+button{
+    height: 50px;
+    width: 100px;
+    background-color: maroon;
+    color: white;
+    border-radius: 5px;
+    border-color: maroon;
+    border-style: ridge;
+    border-width: 5px;
+    cursor: pointer;
+}
+
+#Title {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+#ScoreDisplay {
+    font-size: 26px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+#Main {
+   margin-top: 6.25vh;
+   margin-left: 25vw;
+   width: 50vw;
+   height: 30vh;
+   border-radius: 5px; 
+}
+
+#Die_Display {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    bottom: -12.5pc;
+    border-radius: 5px;
+}
