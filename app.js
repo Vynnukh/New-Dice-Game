@@ -17,6 +17,7 @@ tPgBtn.addEventListener("click", () => {
 })
 
 const Die = [
+    "",
     "./imgs/dice_face_1.png",
     "./imgs/dice_face_2.png",
     "./imgs/dice_face_3.png",
@@ -36,13 +37,15 @@ Btn.addEventListener("click", () => {
     }
 
     const win = () => {
+        Primary.style.display = "none"
+        tPg.style.display = "flex"
         alert("You've won!")
         Score = 0
     }
 
 currentRoll = Math.ceil(Math.random() * 6)
 DieDsply.style.display = "flex"
-DieDsply.src = Die[currentRoll-1]
+DieDsply.src = Die[currentRoll]
 console.log(currentRoll)
 Score += currentRoll
 ScoreDsply.innerHTML = "<p>" + `${currentRoll} was rolled, your score is now ${Score}` + "</p>"
