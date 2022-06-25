@@ -10,11 +10,13 @@ let DieDsply = document.getElementById("Die_Display")
 
 
 Primary.style.display = "none"
+// ^ This should ensure that the main screen is not displayed at the start
 
 tPgBtn.addEventListener("click", () => {
     tPg.style.display = "none"
     Primary.style.display = "flex"
 })
+// ^ The title page button should allow the player to begin the game so that the player can begin rolling the die
 
 const Die = [
     "",
@@ -26,7 +28,11 @@ const Die = [
     "./imgs/dice_face_6.png"
 ]
 
+// ^ This Array store's the dice images and is used to diplay these image when their appropriate values are met
+
 DieDsply.style.display = "none"
+
+// ^ This should hide the dice faces until the game begins
 
 Btn.addEventListener("click", () => {
     const loss = () => {
@@ -36,12 +42,16 @@ Btn.addEventListener("click", () => {
         Score = 0
     }
 
+    // ^ This is the function of which should occur when the player loses by rolling a 1
+
     const win = () => {
         Primary.style.display = "none"
         tPg.style.display = "flex"
-        alert("You've won!")
+        alert(`You've won! Score: ${Score}`)
         Score = 0
     }
+
+    // ^ This is the function of which should occur when the player wins the game by scoring 21 or above
 
 currentRoll = Math.ceil(Math.random() * 6)
 DieDsply.style.display = "flex"
@@ -52,6 +62,10 @@ ScoreDsply.innerHTML = "<p>" + `${currentRoll} was rolled, your score is now ${S
 if(currentRoll == 1) {
     DieDsply.src = Die[currentRoll]
     loss()
+    Score = 0
+    currentRoll = 0
+    DieDsply.style.display = "none"
+    
 } else {
     if(Score >= 21) {
         win()
@@ -63,6 +77,8 @@ if(currentRoll == 1) {
 }
 }
 )
+
+// ^ The remainder of this code should handle the main dice game functionality
 
 
 
