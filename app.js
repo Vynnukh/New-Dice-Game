@@ -9,12 +9,12 @@ let Primary = document.getElementById("Main")
 let DieDsply = document.getElementById("Die_Display")
 
 
-Primary.style.display = "none"
+Game.style.display = "none"
 // ^ This should ensure that the main screen is not displayed at the start
 
 tPgBtn.addEventListener("click", () => {
     tPg.style.display = "none"
-    Primary.style.display = "flex"
+    Game.style.display = "flex"
 })
 // ^ The title page button should allow the player to begin the game so that the player can begin rolling the die
 
@@ -30,13 +30,9 @@ const Die = [
 
 // ^ This Array store's the dice images and is used to diplay these image when their appropriate values are met
 
-DieDsply.style.display = "none"
-
-// ^ This should hide the dice faces until the game begins
-
 Btn.addEventListener("click", () => {
     const loss = () => {
-        Primary.style.display = "none"
+        Game.style.display = "none"
         tPg.style.display = "flex"
         alert("You've Lost")
         Score = 0
@@ -45,7 +41,7 @@ Btn.addEventListener("click", () => {
     // ^ This is the function of which should occur when the player loses by rolling a 1
 
     const win = () => {
-        Primary.style.display = "none"
+        Game.style.display = "none"
         tPg.style.display = "flex"
         alert(`You've won! Score: ${Score}`)
         Score = 0
