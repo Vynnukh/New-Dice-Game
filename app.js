@@ -61,13 +61,15 @@ Score += currentRoll
 ScoreDsply.innerHTML = "<p>" + `${currentRoll} was rolled, your score is now ${Score}` + "</p>"
 if(currentRoll == 1) {
     DieDsply.src = Die[currentRoll]
+    ScoreDsply.innerHTML = "<p>" + "Rules: You lose if you roll a 1. <br>You win if your score reaches or surpasses 21." + "</p>"
     loss()
     Score = 0
     currentRoll = 0
-    DieDsply.style.display = "none"
+    
     
 } else {
     if(Score >= 21) {
+        ScoreDsply.innerHTML = "<p>" + `Previous GameScore : ${Score}<br>Previous winning roll :` + "</p>"
         win()
         currentRoll = 0
         Score = 0
