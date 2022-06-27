@@ -52,7 +52,6 @@ Btn.addEventListener("click", () => {
 currentRoll = Math.ceil(Math.random() * 6)
 DieDsply.style.display = "flex"
 DieDsply.src = Die[currentRoll]
-console.log(currentRoll)
 Score += currentRoll
 ScoreDsply.innerHTML = "<p>" + `${currentRoll} was rolled, your score is now ${Score}` + "</p>"
 if(currentRoll == 1) {
